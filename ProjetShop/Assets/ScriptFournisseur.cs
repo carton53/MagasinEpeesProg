@@ -16,10 +16,9 @@ public class ScriptFournisseur : MonoBehaviour
     {
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
     }
-    void OnCollisionEnter2D(Collision2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
-        print"Aie";
+        print("Aie");
         moveSpeed = 0f;
-        transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
     }
 }
