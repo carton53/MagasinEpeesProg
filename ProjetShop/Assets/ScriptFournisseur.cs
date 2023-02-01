@@ -17,7 +17,7 @@ public class ScriptFournisseur : MonoBehaviour
     
     public void Awake()
     {
-        Stock = GameObject.Find("Vendeur").GetComponent<Stock>();
+        //Stock = GameObject.Find("Vendeur").GetComponent<Stock>();
         //PositionBase = transform.Translate(Vector2 14.07f, 0);
         // Donc quand le GameObject est activé, nous allons chercher le stock dans le GameObject Vendeur dans le Component Stock qui est un script.
     }
@@ -34,26 +34,26 @@ public class ScriptFournisseur : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("Fournisseur arrive");
+       // Debug.Log("Fournisseur arrive");
         // remettre à zero la postion initial à zero 
-        moveFournisseur = true;
+        //moveFournisseur = true;
     }
 
     void Update()
     {
 
 
-        if(moveFournisseur == true)
+       // if(moveFournisseur == true)
         {
-            // Les deux lignes ci-dessous sont pour le déplacement du fournisseur vers le vendeur
-           transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-           float Distance = Mathf.Abs(transform.position.x - Destination.position.x); 
-           //Mathf.Abs transforme la valeur en valeur absolu : permet de rendre un résultat qui peut être négatif en nombre positif
+            ///// Les deux lignes ci-dessous sont pour le déplacement du fournisseur vers le vendeur
+           //transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
+           //float Distance = Mathf.Abs(transform.position.x - Destination.position.x); 
+           ///////////Mathf.Abs transforme la valeur en valeur absolu : permet de rendre un résultat qui peut être négatif en nombre positif
             
-            if(Distance <= 0.1f) // permet de dire si il est arrivé à destination, si la destination est égal à 0s
+            //if(Distance <= 0.1f) // permet de dire si il est arrivé à destination, si la destination est égal à 0s
             {
-                moveFournisseur = false;
-                FournisseurTravaille();
+                //moveFournisseur = false;
+                //FournisseurTravaille();
                 //////////Possiblement là où je vais mettre l'interaction du fournisseur avec le stock et l'argent////////////////
             }
 
@@ -61,9 +61,9 @@ public class ScriptFournisseur : MonoBehaviour
 
     }
 
-    public void FournisseurTravaille()
-    {
-        Stock.Restockage(Restock);
+    //public void FournisseurTravaille()
+    //{
+        //Stock.Restockage(Restock);
     }
 
 
@@ -86,4 +86,4 @@ public class ScriptFournisseur : MonoBehaviour
     //????????????if (GameObject.Find(Fournisseur).SetActive(true)) ;
     //???????????? mettre +4 de stock et -15 argent par exemple 
 
-}
+//}
