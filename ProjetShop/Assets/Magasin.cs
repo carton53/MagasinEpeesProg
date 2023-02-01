@@ -20,8 +20,8 @@ public class Magasin : MonoBehaviour
 
     void Update()
     {
-        TextArgent.text = ScoreArgent;
-        TextEpees.text = ScoreEpees;
+        TextArgent.text = Argent.ToString();
+        TextEpees.text = Epee.ToString();
     }
 
     IEnumerator OuvertureMagasin()
